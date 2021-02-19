@@ -1,0 +1,24 @@
+# IDEs workspace dirs
+**/.idea
+**/.vscode
+**/.env
+
+# Project files and dirs
+bin
+pkg
+*.lock
+**/vendor
+**/*.tmp
+**/*.out
+
+# Dependency dir
+**/github.com
+**/golang.org
+**/gopkg.in
+
+test-results
+
+**/swagger.json
+**/swagger.yml
+
+*.testCoverage.txt
