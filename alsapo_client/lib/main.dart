@@ -1,3 +1,4 @@
+import 'package:alsapo_client/screen/notify_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,9 +33,41 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
         title: const Text('Tong quan'),
-      )
+        actions: <Widget>[
+          IconButton(
+              icon: const Icon(Icons.add_alert),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NotifyScreen()));
+              })
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: const Text('Ok'),
+              decoration: BoxDecoration(color: Colors.blue),
+            ),
+            ListTile(
+              title: const Text('item 1'),
+            )
+          ],
+        ),
+      ),
     );
   }
-  
 }
