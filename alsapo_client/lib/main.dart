@@ -1,8 +1,15 @@
-import 'package:alsapo_client/screen/notify_screen.dart';
+import 'package:alsapo_client/screens/notifiers.dart';
+import 'package:alsapo_client/screens/notify_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<SingleNotifier>(create: (_) => SingleNotifier())
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
