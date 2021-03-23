@@ -1,5 +1,6 @@
 import 'package:alsapo_client/screens/notifiers.dart';
 import 'package:alsapo_client/screens/notify_screen.dart';
+import 'package:alsapo_client/widgets/date_range_dropdown_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -74,6 +75,26 @@ class MyHomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.only(left: 10),
+        children: [
+          DateRangeDropDownWidget(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text('0 Dong'), Text('0 hoa don')],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text('0 Dong'), Text('0 Phieu tra')],
+              ),
+              IconButton(icon: Icon(Icons.arrow_forward_ios), onPressed: () {})
+            ],
+          )
+        ],
       ),
     );
   }

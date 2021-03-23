@@ -8,6 +8,7 @@ import 'notifiers.dart';
 class NotifyCustomerSettingScreen extends StatelessWidget {
   final String _title = 'Sinh nhat';
   final String _subTitle = 'Hien thi thong bao sinh nhat khach hang';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +47,7 @@ class NotifyCustomerSettingScreen extends StatelessWidget {
                         title: Text(e),
                         value: e,
                         onChanged: (value) {
-                          _singleNotifier.updateBirthday(value);
+                          _singleNotifier.updateBirthday(value.toString());
                           Navigator.of(context).pop();
                         }))
                     .toList(),
@@ -62,4 +63,3 @@ class NotifyCustomerSettingScreen extends StatelessWidget {
         );
       });
 }
-

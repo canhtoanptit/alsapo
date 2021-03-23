@@ -27,8 +27,8 @@ class TransactionSettingScreen extends StatelessWidget {
           ),
           margin: const EdgeInsets.only(left: 50.0),
         ),
+        Divider()
       ]),
     );
   }
 }
-
