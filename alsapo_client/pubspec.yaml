@@ -32,6 +32,9 @@ dependencies:
   # Provider
   provider: ^5.0.0
 
+  # Chart
+  charts_flutter: ^0.10.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
