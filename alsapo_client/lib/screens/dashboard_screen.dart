@@ -1,4 +1,5 @@
 import 'package:alsapo_client/widgets/date_range_dropdown_widget.dart';
+import 'package:alsapo_client/widgets/drawer_widget.dart';
 import 'package:alsapo_client/widgets/sale_chart_widget.dart';
 import 'package:alsapo_client/widgets/sales_chart_store_widget.dart';
 import 'package:flutter/material.dart';
@@ -31,20 +32,7 @@ class DashboardScreen extends StatelessWidget {
                 })
           ],
         ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: const Text('Ok'),
-                decoration: BoxDecoration(color: Colors.blue),
-              ),
-              ListTile(
-                title: const Text('item 1'),
-              )
-            ],
-          ),
-        ),
+        drawer: DrawerWidget(),
         body: Padding(
           padding: EdgeInsets.only(left: 15.0),
           child: Column(
