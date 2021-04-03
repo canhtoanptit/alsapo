@@ -35,6 +35,9 @@ dependencies:
   # Chart
   charts_flutter: ^0.10.0
 
+  #socketio
+  socket_io_client: ^2.0.0-beta.3-nullsafety.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

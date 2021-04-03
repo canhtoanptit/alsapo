@@ -3,6 +3,9 @@ import 'package:alsapo_client/screens/notifiers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:socket_io_client/socket_io_client.dart' as IO;
+
 void main() {
   runApp(MultiProvider(
     providers: [
@@ -38,6 +41,29 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DashboardScreen();
+    print('sart');
+    // Dart client
+    IO.Socket socket = IO.io(
+        'https://api-dev.vinid.dev',
+        IO.OptionBuilder()
+            .setPath("/mtp-martech/collector-ws/ws")
+            .setTransports(['websocket']).build());
+    socket.connect();
+    socket.onConnect((_) {
+      print('connect');
+      //socket.emit('authenticate', "wrong token");
+    });
+    socket.on('hello', (data) => print(data));
+    socket.onDisconnect((_) => print('disconnect'));
+    socket.on('fromServer', (_) => print(_));
+    print('ok');
+    return Scaffold(
+        body: Center(
+      child: IconButton(
+        icon: Icon(Icons.add),
+        onPressed: () {},
+      ),
+    ));
+    //return DashboardScreen();
   }
 }
